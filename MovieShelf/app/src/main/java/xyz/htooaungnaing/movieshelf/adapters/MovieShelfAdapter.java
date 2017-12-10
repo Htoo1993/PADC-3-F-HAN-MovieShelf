@@ -18,7 +18,7 @@ public class MovieShelfAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View movieShelfView = layoutInflater.inflate(R.layout.movie_shelf,parent,false);
+        View movieShelfView = layoutInflater.inflate(R.layout.item_movie_shelf,parent,false);
         MovieShelfViewHolder movieShelfViewHolder = new MovieShelfViewHolder(movieShelfView);
         return movieShelfViewHolder;
     }
