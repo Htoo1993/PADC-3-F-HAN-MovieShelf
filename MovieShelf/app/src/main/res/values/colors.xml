@@ -7,4 +7,6 @@
     <color name="colorWhite">#FFF</color>
     <color name="colorYellow">#FFFF00</color>
     <color name="colorFav">#FF5722</color>
+
+    <color name="bgColor">#FF692A25</color>
 </resources>

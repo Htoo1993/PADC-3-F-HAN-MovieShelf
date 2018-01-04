@@ -25,6 +25,28 @@
             android:layout_centerVertical="true"
             />
 
+        <TextView
+            android:id="@+id/tv_trailer_details_upper_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Re Release Trailer"
+            android:layout_alignTop="@id/iv_trailer"
+            android:layout_alignRight="@id/iv_trailer"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"
+            />
+
+        <TextView
+            android:id="@+id/tv_trailer_details_bottom_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trailer"
+            android:layout_alignBottom="@id/iv_trailer"
+            android:layout_alignLeft="@id/iv_trailer"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"
+            />
+
     </RelativeLayout>
 
 

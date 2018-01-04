@@ -6,7 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import xyz.htooaungnaing.movieshelf.MovieShelfApp;
 import xyz.htooaungnaing.movieshelf.R;
+import xyz.htooaungnaing.movieshelf.data.vo.PopularMovieVO;
 import xyz.htooaungnaing.movieshelf.delegates.MovieActionDelegate;
 import xyz.htooaungnaing.movieshelf.viewholders.MovieShelfViewHolder;
 
@@ -14,16 +19,18 @@ import xyz.htooaungnaing.movieshelf.viewholders.MovieShelfViewHolder;
  * Created by htoo on 12/7/2017.
  */
 
-public class MovieShelfAdapter extends RecyclerView.Adapter {
+public class MovieShelfAdapter extends RecyclerView.Adapter<MovieShelfViewHolder> {
 
     private MovieActionDelegate mMovieActionDelegate;
+    private List<PopularMovieVO> mPopularMovieList;
 
     public MovieShelfAdapter(MovieActionDelegate movieActionDelegate){
         mMovieActionDelegate = movieActionDelegate;
+        mPopularMovieList = new ArrayList<>();
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieShelfViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View movieShelfView = layoutInflater.inflate(R.layout.item_movie_shelf,parent,false);
@@ -32,12 +39,17 @@ public class MovieShelfAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(MovieShelfViewHolder holder, int position) {
+        holder.setMovie(mPopularMovieList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mPopularMovieList.size();
+    }
+
+    public void setMovies(List<PopularMovieVO> popularMovieList){
+        mPopularMovieList = popularMovieList;
+        notifyDataSetChanged();
     }
 }
